@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Roronoa Zoro</title>
+            <link rel="stylesheet" href="portfolio.css">
+            <script src="https://kit.fontawesome.com/f5731ae43a.js" crossorigin="anonymous"></script>
+        </head>
+    <body>
+<div id="header">
+    <div class="container">
+            <nav>
+                <img src="Photos/LOGO.png" alt="logo" class="logo">
+                <ul id="sidebar">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                   <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>ONE PIECE</p>
+                <h1>RORONOA <span>ZORO</span></h1>
+            </div>
+    </div>
+</div>
+
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Photos/Luffy.png" alt="Luffy">
+                <div class="layer">
+                    <h3>Luffy</h3>
+                    <p>Monkey D. Luffy, also known as Straw Hat Luffy, 
+                        is the main protagonist of the One Piece franchise. 
+                        He is the captain of the Straw Hat Pirates that 
+                        wants to find the One Piece</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+            </div>
+            <div class="work">
+                <img src="Photos/Sanji.png" alt="Sanji">
+                <div class="layer">
+                    <h3>Sanji</h3>
+                    <p>
+                        "Black Leg" Sanji,born as Vinsmoke Sanji,
+                         is the cook of the Straw Hat Pirates
+                         and one of the Senior Officers of the Straw Hat 
+                         Grand Fleet.He is the fifth member of the crew 
+                         and the fourth to join, doing so at the end of the 
+                         Baratie Arc.
+                        
+                        </p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+            </div>
+            <div class="work">
+                <img src="Photos/Usoup.png" alt="Usoup">
+                <div class="layer">
+                    <h3>Usopp</h3>
+                    <p>"God" Usopp is the sniper of the Straw Hat Pirates 
+                        and one of the Senior Officers of the Straw Hat Grand
+                        Fleet.He is the fourth member of the crew and the
+                        third to join, doing so at the end of the Syrup Village 
+                        Arc. Although he left the crew during the Water 7 Arc.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<script>
+    
+    var sidebar = document.getElementById("sidebar");
+
+    function openmenu(){
+        sidebar.style.right = "0";
+    }
+    
+    function closemenu(){
+        sidebar.style.right = "-200px";
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Roronoa Zoro</title>
+            <link rel="stylesheet" href="services.css">
+            <script src="https://kit.fontawesome.com/f5731ae43a.js" crossorigin="anonymous"></script>
+        </head>
+    <body>
+<div id="header">
+    <div class="container">
+            <nav>
+                <img src="Photos/LOGO.png" alt="logo" class="logo">
+                <ul id="sidebar">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>ONE PIECE</p>
+                <h1>RORONOA <span>ZORO</span></h1>
+            </div>
+    </div>
+</div>
+
+<div id="Services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div><i class="fa-solid fa-user-ninja"></i>
+                <h2>Bounty Hunter</h2>
+                <p> Bounty Hunters are individuals and organizations 
+                    that focus on collecting the bounties of Pirates 
+                    and other Criminals, using these as their primary 
+                    source of income.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Bounty Hunter',50)">BUY FOR 50$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-skull"></i>
+                <h2>Sword Fight</h2>
+                <p> My techniques have to adapt for one
+                     reason or another. In addition to my primary 
+                     fighting style, I have several other related 
+                     fighting styles that form the greater part of 
+                     Three Sword Style fighting abilities.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Sword Fight', 40)">BUY FOR 40$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-dumbbell"></i>
+                <h2>Training</h2>
+                <p> Zoro workout routine highlights its strength-training
+                    methods with exercises like deadlifts, bench presses
+                    and squats that build raw power and the endurance
+                    to keep fighting long after others fall. Zoro is
+                    also skilled in the art of meditation, which
+                    helps it stay focused
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Training', 50)">BUY FOR 50$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-user-plus"></i>
+                <h2>Crew Member</h2>
+                <p> would serve as the first mate, a trusted right-hand man
+                    to the captain of the ship or crew. He would be responsible 
+                    for various crucial tasks and functions
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Crew Member', 60)">BUY FOR 60$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-person-military-pointing"></i>
+                <h2>BodyGuard</h2>
+                <p> I would offers his services as a formidable protector, 
+                    ensuring the safety of clients during perilous 
+                    journeys or high-risk situations.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('BodyGuard', 70)">BUY FOR 70$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-chess-knight"></i>
+                <h2>Assassination</h2>
+                <p>  While morally complex, Zoro might undertake select
+                     assassination missions for clients seeking discreet and 
+                     deadly solutions to their problems.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Assassination', 60)">BUY FOR 60$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-person-walking-arrow-right"></i>
+                <h2>Escort Services</h2>
+                <p>  Zoro safeguards vessels from potential threats on treacherous 
+                    waters, providing clients with secure passage through perilous seas.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Escort Services', 40)">BUY FOR 40$</button>
+            </div>
+            <div>
+                <i class="fa-solid fa-khanda"></i>
+                <h2>Sword Customize</h2>
+                <p> Zoro offers sword customization and maintenance services, 
+                    enabling clients to enhance their weapons or keep them in 
+                    optimal condition.
+                </p>
+                <a href="#">Learn more</a>
+                <br>
+                <br>
+                <button class="btn btn-sm" onclick="addToCart('Sword Customize', 40)">BUY FOR 40$</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cart">
+    <h2>Shopping cart</h2>
+    <ul id="cartItems"></ul>
+    <p>Total: $<span id="cartTotal">0.00</span></p>
+    <br>
+    
+    <a href="www.google.com" class="Checkout">Checkout</a>
+</div>
+<script>
+
+
+const cart = [];
+
+function addToCart(productName, price) {
+    function findProduct(item) {
+        return item.productName === productName;
+    }
+
+    const product = cart.find(findProduct);
+
+    if (product) {
+        product.quantity++;
+    } else {
+        cart.push({ productName, price, quantity: 1 });
+    }
+
+    updateCart();
+}
+
+function removeFromCart(productName) {
+    const index = cart.findIndex(item => item.productName === productName);
+
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+        updateCart();
+    }
+}
+
+function updateCart() {
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+        const cartItem = document.createElement("li");
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.className = "remove";
+        removeButton.onclick = () => removeFromCart(item.productName);
+
+        cartItem.textContent = `${item.productName} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
+
+        cartItem.appendChild(removeButton);
+        cartItems.appendChild(cartItem);
+        total += item.price * item.quantity;
+    });
+
+    const cartTotal = document.getElementById("cartTotal");
+    cartTotal.textContent = total.toFixed(2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    var sidebar = document.getElementById("sidebar");
+
+    function openmenu(){
+        sidebar.style.right = "0";
+    }
+    
+    function closemenu(){
+        sidebar.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

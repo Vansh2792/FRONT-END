@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Roronoa Zoro</title>
+            <link rel="stylesheet" href="Index.css">
+            <script src="https://kit.fontawesome.com/f5731ae43a.js" crossorigin="anonymous"></script>
+        </head>
+    <body>
+<div id="header">
+    <div class="container">
+            <nav>
+                <img src="Photos/LOGO.png" alt="logo" class="logo">
+                <ul id="sidebar">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">My Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>ONE PIECE</p>
+                <h1>RORONOA <span>ZORO</span></h1>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Photos/ZOROUSER.png" alt="ZOROUSER">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>Roronoa Zoro, also known as "Pirate Hunter" Zoro,
+                    is a main combatant of the Straw Hat Pirates, one of their two swordsmen,
+                    one of the Senior Officers of the Straw Hat Grand Fleet, and is publicly 
+                    recognized as the right-hand man of his crew's captain Monkey D. Luffy.
+                    Formerly a bounty hunter, he is the second member of Luffy's crew and 
+                    the first to join it, doing so in the Romance Dawn Arc.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Info')">Info</p>
+                        <p class="tab-links" onclick="opentab('Actors')">Actors</p>
+                        <p class="tab-links" onclick="opentab('Japanese')">Japanese</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Info">
+                        <ul>
+                            <li><span>Swords Style</span><br> 3 Swords Style</li>
+                            <li><span>Origin</span><br>East Blue</li>
+                            <li><span>Bounty</span><br>$1,111,000,000</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Actors">
+                        <ul>
+                            <li><span>Voice Actor</span><br>Kazuya Nakai</li>
+                            <li><span>Voice Actor (Young)</span><br>Megumi Urawa</li>
+                            <li><span>Voice Actor (OVA)</span><br>Wataru Takagi</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="Japanese">
+                        <ul>
+                            <li><span>Birthday</span><br>11 November</li>
+                            <li><span>Age</span><br>21 Years old</li>
+                            <li><span>Japanese Name</span><br>ロロノア・ゾロ</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>zoro11@gmail.com</p>
+                    <p><i class="fa-solid fa-phone-volume"></i>1234567890</p>
+
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="Photos/Luffy.png" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your E-mail" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class=" btn  btn2">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p> Copyright ZORO <i class="fa-solid fa-copyright"></i>. 2023 reserved</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+    var sidebar = document.getElementById("sidebar");
+
+    function openmenu(){
+        sidebar.style.right = "0";
+    }
+    
+    function closemenu(){
+        sidebar.style.right = "-200px";
+    }
+
+
+
+
+</script>
+
+    </body>
+</html>
